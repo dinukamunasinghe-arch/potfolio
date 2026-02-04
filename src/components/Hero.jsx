@@ -8,7 +8,7 @@ const Hero = ({ darkMode }) => {
           <div className="md:w-1/2 mb-10 md:mb-0">
             <p className={`text-lg mb-2 ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>Hello, I'm</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Alex <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>Johnson</span>
+              Dinuka <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>Munasinghe</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6">
               Full Stack <span className={darkMode ? 'text-blue-400' : 'text-blue-600'}>Software Engineer</span>
@@ -36,10 +36,11 @@ const Hero = ({ darkMode }) => {
             <div className="relative">
               <div className={`w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 ${darkMode ? 'border-blue-500' : 'border-blue-400'}`}>
                 <div className={`w-full h-full flex items-center justify-center ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
-                  <div className="text-center">
-                    <div className={`text-6xl mb-4 ${darkMode ? 'text-blue-400' : 'text-blue-500'}`}>👨‍💻</div>
-                    <p className="font-medium">Software Engineer</p>
-                  </div>
+                  <img 
+                    src="/images/70012505.jpg" 
+                    alt="Dinuka Munasinghe" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div className={`absolute -bottom-2 -right-2 w-24 h-24 rounded-full ${darkMode ? 'bg-blue-900/30' : 'bg-blue-200/50'} backdrop-blur-sm`}></div>

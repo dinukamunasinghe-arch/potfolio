@@ -16,7 +16,7 @@ const Skills = ({ darkMode }) => {
       skills: [
         { name: "Node.js", level: 90 },
         { name: "Python/Django", level: 85 },
-        { name: "PostgreSQL", level: 80 },
+        { name: "MySQL", level: 80 },
         { name: "Redis", level: 75 }
       ]
     },

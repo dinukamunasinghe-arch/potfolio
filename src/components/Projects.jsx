@@ -3,28 +3,28 @@ import React from 'react';
 const Projects = ({ darkMode }) => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured online shopping platform with real-time inventory, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "Fintara Website",
+      description: "",
+      tech: ["php", "Laravel", "Mysql", "Telwindcss"],
       github: "https://github.com",
-      live: "https://demo.com",
-      image: "🛒"
+      live: "https://fintara.finance/",
+      image: "/images/fintara.png"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, drag-and-drop, and team collaboration features.",
+      title: "Kernel Encode web site",
+      description: "",
       tech: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
       github: "https://github.com",
       live: "https://demo.com",
       image: "✅"
     },
     {
-      title: "Health & Fitness Tracker",
-      description: "AI-powered fitness application that tracks workouts, nutrition, and provides personalized recommendations.",
-      tech: ["React Native", "Python", "TensorFlow", "Firebase"],
+      title: "National Waterboard Erp Groundwater Monitoring System",
+      description: "A comprehensive ERP system for monitoring groundwater levels and quality across Nigeria.",
+      tech: ["Next js", "Node js", "SSMS"],
       github: "https://github.com",
-      live: "https://demo.com",
-      image: "🏋️"
+      live: "https://erp.waterboard.lk/erp-sandbox/waterproduction",
+         image: "/images/erp.png"
     }
   ];
 
@@ -42,7 +42,15 @@ const Projects = ({ darkMode }) => {
           {projects.map((project, index) => (
             <div key={index} className={`rounded-xl overflow-hidden ${darkMode ? 'bg-gray-800' : 'bg-white shadow-lg'}`}>
               <div className={`h-48 flex items-center justify-center text-6xl ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                {project.image}
+                {project.image.startsWith('/') ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  project.image
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>

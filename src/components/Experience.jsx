@@ -3,25 +3,25 @@ import React from 'react';
 const Experience = ({ darkMode }) => {
   const experiences = [
     {
-      role: "Senior Software Engineer",
-      company: "TechCorp Inc.",
-      period: "2021 - Present",
+      role: "Junior Software Engineer",
+      company: "Kernel Encode",
+      period: "2026 - Present",
       description: "Led frontend team to rebuild company's main product using React and TypeScript. Improved performance by 40%.",
-      tech: ["React", "TypeScript", "GraphQL", "AWS"]
+      tech: ["React", "TypeScript", "Mysql", "AWS","Next.js","Tailwind CSS","Figma","Git"]
     },
     {
       role: "Full Stack Developer",
-      company: "StartupXYZ",
-      period: "2019 - 2021",
+      company: "National Waterboard",
+      period: "2014 - 2025",
       description: "Developed and maintained multiple web applications using Node.js and React. Implemented CI/CD pipelines.",
-      tech: ["Node.js", "React", "MongoDB", "Docker"]
+      tech: ["Node.js", "React", "SSMS", "Docker"]
     },
     {
-      role: "Junior Developer",
-      company: "WebDev Agency",
-      period: "2018 - 2019",
+      role: "Intern Software Developer",
+      company: "National Waterboard",
+      period: "2022-2023",
       description: "Built responsive websites and web applications for various clients. Collaborated with designers and PMs.",
-      tech: ["JavaScript", "HTML/CSS", "PHP", "WordPress"]
+      tech: ["JavaScript", "HTML/CSS", "PHP", "WordPress","SQL Server Management Studio","React"]
     }
   ];
 

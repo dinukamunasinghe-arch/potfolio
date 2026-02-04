@@ -17,8 +17,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className={`w-8 h-8 rounded-full ${darkMode ? 'bg-blue-500' : 'bg-blue-600'}`}></div>
-            <span className="text-xl font-bold">DevPortfolio</span>
+            
+            <span className="text-xl font-bold">Dinuka Munasinghe</span>
           </div>
 
           {/* Desktop Navigation */}

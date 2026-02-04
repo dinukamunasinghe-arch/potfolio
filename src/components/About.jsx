@@ -11,14 +11,18 @@ const About = ({ darkMode }) => {
             </h2>
             <div className={`w-64 h-64 rounded-lg overflow-hidden ${darkMode ? 'bg-gray-700' : 'bg-gray-300'}`}>
               <div className="w-full h-full flex items-center justify-center">
-                <span className="text-4xl">📝</span>
+               <img 
+                    src="/images/aboutme.png" 
+                    alt="Dinuka Munasinghe" 
+                    className="w-full h-full object-cover"
+                  />
               </div>
             </div>
           </div>
           <div className="md:w-2/3 md:pl-12">
             <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              I'm a passionate software engineer with 5+ years of experience building web applications and scalable systems. 
-              My expertise includes frontend and backend development, cloud infrastructure, and DevOps practices.
+              I'm a passionate software engineer with 2+ years of experience building web applications and scalable systems. 
+              My expertise includes frontend and backend development and DevOps practices.
             </p>
             <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
               I enjoy turning complex problems into simple, beautiful, and intuitive solutions. When I'm not coding, 
@@ -26,7 +30,7 @@ const About = ({ darkMode }) => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
               <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700/50' : 'bg-white'}`}>
-                <h4 className="font-bold text-lg mb-1">5+ Years</h4>
+                <h4 className="font-bold text-lg mb-1">2+ Years</h4>
                 <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>Experience</p>
               </div>
               <div className={`p-4 rounded-lg ${darkMode ? 'bg-gray-700/50' : 'bg-white'}`}>

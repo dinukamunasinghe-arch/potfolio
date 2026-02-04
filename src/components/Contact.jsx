@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = ({ darkMode }) => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Contact = ({ darkMode }) => {
     subject: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,15 +19,42 @@ const Contact = ({ darkMode }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Message sent! (This is a demo)');
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    setIsLoading(true);
+
+    try {
+      const templateParams = {
+        to_name: 'Dinuka',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'dinukanisheda9@gmail.com'
+      };
+
+      await emailjs.send(
+        'service_70jbj4e', // You'll need to replace this
+        'template_z0vgt2w', // Replace with your actual template ID from EmailJS
+        templateParams,
+        '9ZEyqBJqnTL07Ogdg' // You'll need to replace this
+      );
+
+      setIsSent(true);
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+      setTimeout(() => setIsSent(false), 5000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -49,7 +79,7 @@ const Contact = ({ darkMode }) => {
                   </div>
                   <div>
                     <h4 className="font-bold">Email</h4>
-                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>alex@devportfolio.com</p>
+                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>dinukanisheda9@gmail.com</p>
                   </div>
                 </div>
                 
@@ -59,7 +89,7 @@ const Contact = ({ darkMode }) => {
                   </div>
                   <div>
                     <h4 className="font-bold">Phone</h4>
-                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>+1 (123) 456-7890</p>
+                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>+94 78 300 6972</p>
                   </div>
                 </div>
                 
@@ -69,21 +99,21 @@ const Contact = ({ darkMode }) => {
                   </div>
                   <div>
                     <h4 className="font-bold">Location</h4>
-                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>San Francisco, CA</p>
+                    <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>No 275 Kachchagoda Payagala, Kalutara,Sri Lanka</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex space-x-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
+                <a href="https://github.com/DDN53" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
                   GitHub
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
+                <a href="http://linkedin.com/in/dinuka-nisheda-a821a9293/" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
                   LinkedIn
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
+                {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}>
                   Twitter
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -141,11 +171,24 @@ const Contact = ({ darkMode }) => {
                   ></textarea>
                 </div>
                 
+                {isSent && (
+                  <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    Message sent successfully! I'll get back to you soon.
+                  </div>
+                )}
+                
                 <button
                   type="submit"
-                  className={`w-full py-3 rounded-lg font-medium ${darkMode ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+                  disabled={isLoading}
+                  className={`w-full py-3 rounded-lg font-medium transition-colors ${
+                    isLoading 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : darkMode 
+                        ? 'bg-blue-600 hover:bg-blue-700' 
+                        : 'bg-blue-500 hover:bg-blue-600 text-white'
+                  }`}
                 >
-                  Send Message
+                  {isLoading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
