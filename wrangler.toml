@@ -1,5 +1,24 @@
+<<<<<<< HEAD
 name = "potfolio"
 compatibility_date = "2026-02-05"
 
 # For React SPA deployment on Cloudflare Pages
 pages_build_output_dir = "dist/client"
+=======
+name = "porfolio"                  # ← change this
+main = "src/main.jsx"                     # or .ts, or wherever your entrypoint is
+compatibility_date = "2026-02-05"         # ← use today's date or later
+compatibility_flags = [ "nodejs_compat" ] # optional but commonly needed
+
+# Add these sections only if you need them
+# [vars]
+# MY_VAR = "some-value"
+
+# [[kv_namespaces]]
+# binding = "MY_KV"
+# id = "your-kv-namespace-id"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-r2-bucket"
+>>>>>>> 2ddb3ec03230286ecefed99ed5e1adb9667a2e9a
