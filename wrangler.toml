@@ -17,3 +17,6 @@ compatibility_flags = [ "nodejs_compat" ] # optional but commonly needed
 # binding = "MY_BUCKET"
 # bucket_name = "my-r2-bucket"
 
+[build]
+node_compat = true   # legacy, prefer flags above
+external_modules = ["tailwindcss"]   # experimental / may not exist, check docs
