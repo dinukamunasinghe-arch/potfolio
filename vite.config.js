@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['node:events', 'node:perf_hooks', 'node:tty']
+      external: ['node:events', 'node:perf_hooks', 'node:tty', 'tailwindcss']
     }
   }
 })
