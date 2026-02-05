@@ -1,0 +1,16 @@
+name = "porfolio"                  # ← change this
+main = "src/main.jsx"                     # or .ts, or wherever your entrypoint is
+compatibility_date = "2026-02-05"         # ← use today's date or later
+compatibility_flags = [ "nodejs_compat" ] # optional but commonly needed
+
+# Add these sections only if you need them
+# [vars]
+# MY_VAR = "some-value"
+
+# [[kv_namespaces]]
+# binding = "MY_KV"
+# id = "your-kv-namespace-id"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-r2-bucket"
